@@ -1,0 +1,78 @@
+.bar__responsive {
+  display: none;
+}
+
+.nav__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+.nav__input:checked ~ .nav__overlay {
+  display: block;
+}
+
+.nav__mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 30%;
+  min-width: 40vw;
+  border-radius: 4px;
+  background-color: #f4f4f4;
+  z-index: 1;
+  transform: translateX(-100%);
+  transition: all 0.4s ease-in-out;
+}
+
+.nav__input:checked ~ .nav__mobile {
+  transform: translateX(0);
+}
+.nav__mobile-list {
+  margin-top: 4rem;
+}
+.nav__mobile-link {
+  padding: 1rem 4rem;
+  position: relative;
+}
+.nav__mobile-link{
+  display: inline-block;
+  position: relative;
+}
+.nav__mobile-link:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--textPriceSale);
+  -webkit-transition: width 0.3s ease-in-out;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -o-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav__mobile-link:hover:after {
+  width: 40% ;
+}
+
+
+
+.nav__moblie-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 992px){
+  .bar__responsive{
+    display: block;
+  }
+}
